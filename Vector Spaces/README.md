@@ -82,4 +82,30 @@ vectors cannot be interpreted by each other, so they are regarded as independent
 * There can be multiple bases for a linear vector space. A vector taken from that space can be represented in terms of those multiple 
 bases. In that case, representation coefficients would be different for each of them. 
 
+## Orthogonal and Orthonormal Sets
 
+Let's we have a set of $n$ non-zero vectors called $U$. If dot product of all possible vector pairs derived from this vector set is equal to zero, $U$ is called as orthogonal set. The vectors in an orthogonal set have to be linearly independent. If all those vectors are of unit length, then it is called as orthonormal set. Dividing orthogonal vectors by their respective norms helps to form ortonormal set. A basis for a vector space does not have to be orthogonal or orthonormal set, but standard basis $\\{e_1, e_2, e_3\\}$ is orthonormal set. 
+
+$$ U = \\{v_1, v_2, v_3, \cdots, v_n\\} $$
+
+$$ v_i \cdot v_j = 0, \\,\\,\\, whenever \\,\\, i \neq j \\,\\, \rightarrow \\,\\, U = orthogonal $$
+
+$$ u_i = \frac{v_i}{||v_i||}, \\,\\,\\, \forall i \in range(0, n) \\,\\, \rightarrow \\,\\, U = orthonormal $$
+
+## Gram-Schmidt Process
+
+Gram-Schmidt process is a method used to convert a given set of vectors into their orthogonal and orthonormal versions. It is actually $2$-step process where a vector in the set is orthogonalized in each iteration as a step $1$, and then those orthogonalized vectors are divided by their norms to form their respective orthonormal correspondences. Orthogonalization of vector $v_i$ is dependent on orthonormal of vector $v_{i - 1}$, so these $2$ steps are applied in alternate order. To understand the algorithm better, we can look at the following example:
+
+$$Input: V = \\{v_1, v_2, v_3\\}$$
+
+$$ Iteration 1: o_1 = v_1 \\,\\,\\,\\,\\,\\,\\,\\,\\,\\, e_1 = \frac{o_1}{||o_1||} $$
+
+$$ Iteration 2: o_2 = v_2 - (v_2 \cdot e_1)e_1 \\,\\,\\,\\,\\,\\,\\,\\,\\,\\, e_2 = \frac{o_2}{||o_2||} $$
+
+$$ Iteration 3: o_3 = v_3 - (v_3 \cdot e_2)e_2 - (v_3 \cdot e_1)e_1  \\,\\,\\,\\,\\,\\,\\,\\,\\,\\, e_3 = \frac{o_3}{||o_3||} $$
+
+$$Output 1: Orthogonal \\,\\, Set = \\{o_1, o_2, o_3\\}$$
+
+$$Output 2: Orthonormal \\,\\, Set = \\{e_1, e_2, e_3\\}$$
+
+The mathematical operation done between $v_i$ and $e_j$ in each iteration (v_i \cdot e_j)e_j is actually projection. You can look at the following notation: $Proj_{e_j}v_i = \frac{v_i \cdot e_j}{||e_j||} \frac{e_j}{||e_j||} = (v_i \cdot e_j)e_j \\,\\,\\,\\,\\ (||e_j|| = 1)$
