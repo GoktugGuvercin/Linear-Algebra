@@ -121,7 +121,7 @@ $$ A = \begin{bmatrix}
 5 & 4 & 9 & 3 \\ 
 \end{bmatrix}$$
 
-When we examine the matrix, we see that row $1$ and row $2$ are dependent on each other; multiplying row $1 by scalar $2$ directly gives us row $2$. However, row $3$ cannot be expressed in terms of row $1$ and row $2$. As a result, we have $2$ independent row vectors for matrix $A$. In that case, we end up with the following outcomes: 
+When we examine the matrix, we see that row $1$ and row $2$ are dependent on each other; multiplying row $1$ by scalar $2$ directly gives us row $2$. However, row $3$ cannot be expressed in terms of row $1$ and row $2$. As a result, we have $2$ independent row vectors for matrix $A$. In that case, we end up with the following outcomes: 
 
 $$ Dim(row \\, \\, space) = 2$$
 
