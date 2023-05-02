@@ -1,11 +1,8 @@
 ## Span of Vectors:
 
-You have a linear space V, and there is a subset of that space containing the items $v_1$, $v_2$, and $v_3$. All linear combinations of those 
-items creates a new set, which is called span. In other words, span is a set enclosing all possible linear combinations.
+Let $v_1$, $v_2$, $\cdots$, $v_n$ be vectors in the vector space $V$. If we multiply these vectors by pre-determined scalars and then sum them up, we derive their one possible linear combination. In this case, the set of all possible linear combinations of $v_1$, $v_2$, $\cdots$, $v_n$ is called span. The span of the vectors defines a subspace inside their origin vector space $V$.
 
-$span(v_1, v_2, v_3) = a_1v_1 + a_2v_2 + a_3v_3$
-
-Where $a_1$, $a_2$, and $a_3$ are arbitrary scalars.
+$$span(v_1, v_2, \cdots, v_n) = a_1v_1 + a_2v_2 + \cdots + a_nv_n, \\,\\,\\, \forall a_i \in \mathcal{R}$$
 
 
 ## Spanning Set (Generating Set):
@@ -112,4 +109,24 @@ $$Output 1: Orthogonal \\,\\, Set = \\{o_1, o_2, o_3\\}$$
 
 $$Output 2: Orthonormal \\,\\, Set = \\{e_1, e_2, e_3\\}$$
 
-The mathematical operation done between $v_i$ and $e_j$ in each iteration (v_i \cdot e_j)e_j is actually projection. You can look at the following notation: $Proj_{e_j}v_i = \frac{v_i \cdot e_j}{||e_j||} \frac{e_j}{||e_j||} = (v_i \cdot e_j)e_j \\,\\,\\,\\,\\ (||e_j|| = 1)$
+The mathematical operation done between $v_i$ and $e_j$ in each iteration $(v_i \cdot e_j)e_j$ is actually projection. You can look at the following notation: $Proj_{e_j}v_i = \frac{v_i \cdot e_j}{||e_j||} \frac{e_j}{||e_j||} = (v_i \cdot e_j)e_j \\,\\,\\,\\,\\ (||e_j|| = 1)$
+
+## Row Space, Column Space and Rank
+
+Let's we have an $m$ x $n$ dimensional matrix $A$. The subspace defined by the span of its row vectors is called *row-space*. Similarly, the subspace spanned by the column vectors in matrix $A$ refers to *column-space* of $A$. The dimensions of row and column spaces have to be same, which refers to *rank* of $A$. To calculate the rank of a matrix, we can use many different approaches like SVD decomposition, or gauss-jordan elimination. However, the main idea lying behind all those techniques is **independence**: The dimension of any subspace spanned by a set of vectors is equal to the number of independent vectors in that set. To understand this better, we can look at the following example:
+
+$$ A = \begin{bmatrix} 
+1 & 3 & 2 & 1 \\
+2 & 6 & 4 & 2 \\
+5 & 4 & 9 & 3 \\ 
+\end{bmatrix}$$
+
+When we examine the matrix, we see that row $1$ and row $2$ are dependent on each other; multiplying row $1 by scalar $2$ directly gives us row $2$. However, row $3$ cannot be expressed in terms of row $1$ and row $2$. As a result, we have $2$ independent row vectors for matrix $A$. In that case, we end up with the following outcomes: 
+
+$$ Dim(row \\, \\, space) = 2$$
+
+$$ Dim(col \\, \\, space) = Dim(row \\, \\, space) \rightarrow Dim(col \\, \\, space) = 2$$
+
+$$ Rank(A) = Dim(col \\, \\, space) = Dim(row \\, \\, space) \rightarrow Rank(A) = 2$$
+
+In this case, we conclude that only $2$ column vectors in the matrix are independent. The column space spanned by these $2$ column vectors refers to a $2$ dimensional plane inside $R^3$. 
