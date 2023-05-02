@@ -32,7 +32,11 @@ $$ span(e_1, e_2) \neq R^3, \\,\\,\\, span(e_1, e_2) \subset R^3 $$
 
 $$ span(e_1, e_2, e_3) = R^3 \rightarrow U = \\{e_1, e_2, e_3\\} = Generating \\,\\, Set$$
 
+At this point, the confusing part is how we should check this. In other words, the critical point is how we make sure whether all vectors in a space can be represented by linear combinations of subset $U$. In fact, we do not need to explicitly check it. Any set of $n$ linearly independent vectors spans $N$ dimensional vector space. All other cases cannot be spanning set:
 
+1. $U = \\{v_1, v_2, \cdots, v_n\\}$ linearly independent $\rightarrow$ $U$ spans $R^n$
+2. $U = \\{v_1, v_2, \cdots, v_n\\}$ linearly independent $\rightarrow$ $U$ cannot span $R^{n+k}$ where $k \in Z^+$
+3. For $R^{n+k}$ where $k \in Z^-$, you cannot find $n$ number of independent vectors in $R^{n+k}$
 ## Independence
 
 Let's we have a set of $n$ vectors denoted by $U$. If any of these vectors cannot be expressed by the linear combination of other $n-1$ vectors
