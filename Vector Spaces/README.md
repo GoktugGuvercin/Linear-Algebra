@@ -129,4 +129,4 @@ $$ Dim(col \\, \\, space) = Dim(row \\, \\, space) \rightarrow Dim(col \\, \\, s
 
 $$ Rank(A) = Dim(col \\, \\, space) = Dim(row \\, \\, space) \rightarrow Rank(A) = 2$$
 
-In this case, we conclude that only $2$ column vectors in the matrix are independent. The column space spanned by these $2$ column vectors refers to a $2$ dimensional plane inside $R^3$. 
+These outcomes also help us to understand that only $2$ column vectors in the matrix are independent. The column space spanned by these $2$ column vectors refers to a $2$ dimensional plane inside $R^3$. 
